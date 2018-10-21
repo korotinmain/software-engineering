@@ -2,7 +2,7 @@ package com.korotin;
 
 import java.util.Scanner;
 
-public class TotalNumbers {
+public class TotalNumbers implements LiteralConstants {
     private String initText;
     private String inputTextFromUser;
 
@@ -10,20 +10,23 @@ public class TotalNumbers {
 
     public TotalNumbers(String inputText) {
         this.initText = inputText;
-        System.out.print(LiteralConstants.Strings.INPUT_TEXT);
+        System.out.print(INPUT_TEXT);
         this.inputTextFromUser = scanner.nextLine();
         getTotal();
     }
 
     private void getTotal() {
-        System.out.println(LiteralConstants.Strings.SUM_FROM_INIT + this.getNumbersFromText(this.initText));
-        System.out.println(LiteralConstants.Strings.SUM_FROM_INPUT + this.getNumbersFromText(this.inputTextFromUser));
+        System.out.println(SUM_FROM_INIT + this.getNumbersFromText(this.initText));
+        System.out.println(SUM_FROM_INPUT + this.getNumbersFromText(this.inputTextFromUser));
     }
 
     private int getNumbersFromText(String inputText) {
         System.out.print(inputText + " - ");
-        String textWithoutWhitespaces = StringAssistant.deleteWhitespaces(inputText);
-        int total = StringAssistant.getTotalOfNumbersFromString(textWithoutWhitespaces);
+        int total = StringAssistant.getTotalOfNumbersFromString(inputText);
         return total;
+    }
+
+    public void closeScanner() {
+        scanner.close();
     }
 }

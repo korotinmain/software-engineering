@@ -1,8 +1,9 @@
 package com.korotin;
 
-public class Main {
+public class Main implements LiteralConstants {
     public static void main(String[] args) {
-        System.out.println(LiteralConstants.Strings.AUTHOR_NAME);
-        new TotalNumbers(LiteralConstants.Strings.INIT_INPUT_TEXT);
+        System.out.println(AUTHOR_NAME);
+        TotalNumbers totalNumbers = new TotalNumbers(INIT_INPUT_TEXT);
+        totalNumbers.closeScanner();
     }
 }
