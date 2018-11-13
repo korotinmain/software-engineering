@@ -1,3 +1,5 @@
+package com.korotin;
+
 public class Places {
     public int generalCount;
     public int coupeCount;
